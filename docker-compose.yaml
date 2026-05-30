@@ -1,0 +1,11 @@
+services:
+  prediction-service:
+    build: .
+    ports:
+      - "9779:9779"
+    volumes:
+      - .:/app
+      - /app/__pycache__
+    environment:
+      - PYTHONPATH=/app
+    restart: always

@@ -1,0 +1,12 @@
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache
+.vscode
+.idea
+.git
+.gitignore
+model.pkl
+# 1806126.csv  <-- Commented out to include it for training if needed
+src/test
