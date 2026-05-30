@@ -1,3 +1,4 @@
+import os
 import pickle
 import pandas as pd
 from fastapi import FastAPI, HTTPException
@@ -16,8 +17,8 @@ app = FastAPI(
 )
 
 predictor: Optional[DelayPredictor] = None
-CSV_PATH = Path("1806126.csv")
-MODEL_PATH = Path("model.pkl")
+CSV_PATH = Path(os.getenv("CSV_PATH", "1806126.csv"))
+MODEL_PATH = Path(os.getenv("MODEL_PATH", "model.pkl"))
 
 @app.on_event("startup")
 def startup_event():

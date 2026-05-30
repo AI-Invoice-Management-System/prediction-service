@@ -5,8 +5,8 @@ This service provides an API to predict invoice payment delays and aging buckets
 ## Getting Started
 
 ### Prerequisites
-- Python 3.8+
-- Dependencies listed in `requirements.txt`
+- Python 3.11+ (recommended)
+- Dependencies listed in `requirements.txt` (pinned for reproducibility)
 
 ### Running the API
 ```bash
@@ -32,6 +32,31 @@ docker run -p 9779:9779 prediction-service
 docker-compose up --build
 ```
 The API will be available at `http://localhost:9779`.
+
+## Logging
+
+### Local Execution
+Logs are printed directly to the terminal where you started the `uvicorn` or `python main.py` command.
+
+### Docker Execution
+To view logs for a running container:
+```bash
+docker logs <container_id_or_name>
+```
+To follow logs in real-time:
+```bash
+docker logs -f <container_id_or_name>
+```
+
+### Docker Compose Execution
+To view logs for all services:
+```bash
+docker-compose logs
+```
+To follow logs for the prediction service:
+```bash
+docker-compose logs -f prediction-service
+```
 
 ## API Endpoints
 

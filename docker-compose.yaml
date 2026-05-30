@@ -8,4 +8,6 @@ services:
       - /app/__pycache__
     environment:
       - PYTHONPATH=/app
+      - CSV_PATH=/app/1806126.csv
+      - MODEL_PATH=/app/model.pkl
     restart: always
